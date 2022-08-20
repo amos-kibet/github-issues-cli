@@ -1,4 +1,4 @@
-defmodule IssuesTest do
+defmodule GithubIssuesTest do
   use ExUnit.Case
   doctest Issues
 
