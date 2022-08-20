@@ -3,13 +3,12 @@ defmodule Issues.TableFormatter do
 
   def print_table_for_columns(rows, headers) do
     with data_by_columns = split_into_columns(rows, headers),
-         columns_widths  = widths_of(data_by_columns),
-         format          = format_for(columns_widths)
-         do
-           puts_one_line_in_columns(headers, format)
-           IO.puts(separator(columns_widths))
-           puts_in_columns(data_by_columns, format)
-         end
+         columns_widths = widths_of(data_by_columns),
+         format = format_for(columns_widths) do
+      puts_one_line_in_columns(headers, format)
+      IO.puts(separator(columns_widths))
+      puts_in_columns(data_by_columns, format)
+    end
   end
 
   def split_into_columns(rows, headers) do
@@ -35,7 +34,7 @@ defmodule Issues.TableFormatter do
 
   def puts_in_columns(data_by_columns, format) do
     data_by_columns
-    |> List.zip
+    |> List.zip()
     |> map(&Tuple.to_list/1)
     |> each(&puts_one_line_in_columns(&1, format))
   end

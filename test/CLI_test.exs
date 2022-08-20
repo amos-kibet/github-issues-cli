@@ -13,6 +13,6 @@ defmodule CLITest do
 
   defp fake_created_at_list(values) do
     for value <- values,
-    do: %{"created_at" => value, "other_data" => "xxx"}
+        do: %{"created_at" => value, "other_data" => "xxx"}
   end
 end
