@@ -24,7 +24,7 @@ defmodule Issues.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # hhtp client
+      # http client
       {:httpoison, "~> 1.0.0"},
       # json parser
       {:poison, "~> 3.1"},
